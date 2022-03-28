@@ -6,7 +6,7 @@ from gtts import gTTS as gt
 from playsound import playsound as ps
 import random
 import os
-
+import subprocces
 
 catch = sr.Recognizer()
 
@@ -33,7 +33,7 @@ def response(voice):
     if "Sen kimsin" in voice:
         speak("benim ismim maymun beni berkant tasarladı")
     if "hayat nasıl gidiyor" in voice:
-        speak("Hayat dediğin nedir ki gülüm vur birini değiştir ötekini")
+        speak("doğumumdan gecen sürede daha pek bir şey yaşıyamadım")
     if "saat kaç" in voice:
         speak(datetime.now())
     if "arama yap" in voice:
@@ -41,6 +41,11 @@ def response(voice):
         url = "https://google.com/search?q= " + search
         webbrowser.get().open(url)
         print(search + " için bulduklarım")
+    if "bilgi ver" in voice:
+        speak("Ne hakkında bilgi vermemi istiyorsun")
+    #if "açık kaynak kodlarını gösterir misin"
+        #speak("Tabi ki")
+        #subprocces.call(["cd Destkop/","cd bin/","./pycharm.sh"])
     if "maymun kapan" in voice:
         speak("görüşürüz berkant")
         exit()
